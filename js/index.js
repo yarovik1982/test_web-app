@@ -1,3 +1,5 @@
 import { toggleActive } from "./navbar.js";
+import { cart } from "./cart.js";
 
-const setActiveLink = toggleActive()
+toggleActive()
+cart()
