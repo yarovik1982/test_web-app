@@ -1,22 +1,150 @@
 <!DOCTYPE html>
 <html lang="ru" data-bs-theme="auto">
-  <head>
-    <meta charset="UTF-8">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web App</title>
-    <script src="./js/index.js" defer></script>
-  </head>
-  <body id="body" style="height: 100vh;">
-    <div class="container-fluid">
-      <h1 class="text-center" id="title">
-        My First Web App
-      </h1>
-      <button class="btn btn-info btn-sm" id="btnShow">Показать</button>
-      <div class="container">
-        <div class="row py-3" id="out"></div>
+
+<head>
+  <meta charset="UTF-8">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web App</title>
+  <script src="./js/index.js" type="module" defer></script>
+</head>
+
+<body id="body" style="height: 100vh;">
+  <div class="container-fluid">
+    <h1 class="text-center" id="title">
+      Kazan-Mangal
+    </h1>
+    <nav class="navbar navbar-dark bg-dark" aria-label="Пример первой панели навигации">
+      <div class="container-fluid">
+
+        <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
+          aria-controls="navbar" aria-expanded="false" aria-label="Переключить навигацию">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <i class="bi bi-cart2 fs-1"></i>
+
+        <div class="navbar-collapse collapse" id="navbar">
+          <ul class="navbar-nav me-auto mb-2">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Главная</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Ссылка</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Отключенная</a>
+            </li>
+            <!-- <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Выпадающий список</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Действие</a></li>
+                  <li><a class="dropdown-item" href="#">Другое действие</a></li>
+                  <li><a class="dropdown-item" href="#">Что-то еще здесь</a></li>
+                </ul>
+              </li> -->
+          </ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+          <div class="card h-100">
+            <img src="./images/product-1.jpg" class="card-img-top" alt="Ролл угорь стандарт">
+            <div class="card-body">
+              <h5 class="card-title">Ролл угорь стандарт</h5>
+              <p class="card-text">Рис, угорь, соус унаги, кунжут, водоросли нори.</p>
+            </div>
+            <div class="card-footer">
+              <div class="d-flex align-items-center py-1 justify-content-between">
+                <buttom class="btn btn-primary btn-sm">В корзину</buttom>
+                <strong>250 ₽</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img src="./images/product-2.jpg" class="card-img-top" alt="Калифорния лосось стандарт">
+            <div class="card-body">
+              <h5 class="card-title">Калифорния лосось стандарт</h5>
+              <p class="card-text">Рис, лосось, авокадо, огурец, майонез, икра масаго, водоросли нори.</p>
+            </div>
+            <div class="card-footer">
+              <div class="d-flex align-items-center py-1 justify-content-between">
+                <buttom class="btn btn-primary btn-sm">В корзину</buttom>
+                <strong>395 ₽</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img src="./images/product-3.jpg" class="card-img-top" alt="Окинава стандарт">
+            <div class="card-body">
+              <h5 class="card-title">Окинава стандарт</h5>
+              <p class="card-text"> Рис, креветка отварная, сыр сливочный, лосось, огурец свежий...</p>
+            </div>
+            <div class="card-footer">
+              <div class="d-flex align-items-center py-1 justify-content-between">
+                <buttom class="btn btn-primary btn-sm">В корзину</buttom>
+                <strong>250 ₽</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img src="./images/product-4.jpg" class="card-img-top" alt="Цезарь маки хl">
+            <div class="card-body">
+              <h5 class="card-title">Цезарь маки хl</h5>
+              <p class="card-text">Рис, куриная грудка копченая, икра масаго, томат, айсберг, соус цезарь...</p>
+            </div>
+            <div class="card-footer">
+              <div class="d-flex align-items-center py-1 justify-content-between">
+                <buttom class="btn btn-primary btn-sm">В корзину</buttom>
+                <strong>250 ₽</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img src="./images/product-5.jpg" class="card-img-top" alt="Ясай маки стандарт 185 г">
+            <div class="card-body">
+              <h5 class="card-title">Ясай маки стандарт 185 г</h5>
+              <p class="card-text">Рис, помидор свежий, перец болгарский, авокадо, огурец, айсберг</p>
+            </div>
+            <div class="card-footer">
+              <div class="d-flex align-items-center py-1 justify-content-between">
+                <buttom class="btn btn-primary btn-sm">В корзину</buttom>
+                <strong>250 ₽</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img src="./images/product-6.jpg" class="card-img-top" alt="Ролл с креветкой стандарт">
+            <div class="card-body">
+              <h5 class="card-title">Ролл с креветкой стандарт</h5>
+              <p class="card-text">Рис, водоросли нори, креветки отварные, сыр сливочный, огурцы</p>
+            </div>
+            <div class="card-footer">
+              <div class="d-flex align-items-center py-1 justify-content-between">
+                <buttom class="btn btn-primary btn-sm">В корзину</buttom>
+                <strong>250 ₽</strong>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+  </div>
 
 
 
@@ -26,84 +154,87 @@
 
 
 
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
-    <script>
-      (() => {
-  'use strict'
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
 
-  const getStoredTheme = () => localStorage.getItem('theme')
-  const setStoredTheme = theme => localStorage.setItem('theme', theme)
+  <script>
+    (() => {
+      'use strict'
 
-  const getPreferredTheme = () => {
-    const storedTheme = getStoredTheme()
-    if (storedTheme) {
-      return storedTheme
-    }
+      const getStoredTheme = () => localStorage.getItem('theme')
+      const setStoredTheme = theme => localStorage.setItem('theme', theme)
 
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
-  }
+      const getPreferredTheme = () => {
+        const storedTheme = getStoredTheme()
+        if (storedTheme) {
+          return storedTheme
+        }
 
-  const setTheme = theme => {
-    if (theme === 'auto') {
-      document.documentElement.setAttribute('data-bs-theme', (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'))
-    } else {
-      document.documentElement.setAttribute('data-bs-theme', theme)
-    }
-  }
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+      }
 
-  setTheme(getPreferredTheme())
+      const setTheme = theme => {
+        if (theme === 'auto') {
+          document.documentElement.setAttribute('data-bs-theme', (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'))
+        } else {
+          document.documentElement.setAttribute('data-bs-theme', theme)
+        }
+      }
 
-  const showActiveTheme = (theme, focus = false) => {
-    const themeSwitcher = document.querySelector('#bd-theme')
-
-    if (!themeSwitcher) {
-      return
-    }
-
-    const themeSwitcherText = document.querySelector('#bd-theme-text')
-    const activeThemeIcon = document.querySelector('.theme-icon-active use')
-    const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
-    const svgOfActiveBtn = btnToActive.querySelector('svg use').getAttribute('href')
-
-    document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
-      element.classList.remove('active')
-      element.setAttribute('aria-pressed', 'false')
-    })
-
-    btnToActive.classList.add('active')
-    btnToActive.setAttribute('aria-pressed', 'true')
-    activeThemeIcon.setAttribute('href', svgOfActiveBtn)
-    const themeSwitcherLabel = `${themeSwitcherText.textContent} (${btnToActive.dataset.bsThemeValue})`
-    themeSwitcher.setAttribute('aria-label', themeSwitcherLabel)
-
-    if (focus) {
-      themeSwitcher.focus()
-    }
-  }
-
-  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-    const storedTheme = getStoredTheme()
-    if (storedTheme !== 'light' && storedTheme !== 'dark') {
       setTheme(getPreferredTheme())
-    }
-  })
 
-  window.addEventListener('DOMContentLoaded', () => {
-    showActiveTheme(getPreferredTheme())
+      const showActiveTheme = (theme, focus = false) => {
+        const themeSwitcher = document.querySelector('#bd-theme')
 
-    document.querySelectorAll('[data-bs-theme-value]')
-      .forEach(toggle => {
-        toggle.addEventListener('click', () => {
-          const theme = toggle.getAttribute('data-bs-theme-value')
-          setStoredTheme(theme)
-          setTheme(theme)
-          showActiveTheme(theme, true)
+        if (!themeSwitcher) {
+          return
+        }
+
+        const themeSwitcherText = document.querySelector('#bd-theme-text')
+        const activeThemeIcon = document.querySelector('.theme-icon-active use')
+        const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
+        const svgOfActiveBtn = btnToActive.querySelector('svg use').getAttribute('href')
+
+        document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+          element.classList.remove('active')
+          element.setAttribute('aria-pressed', 'false')
         })
+
+        btnToActive.classList.add('active')
+        btnToActive.setAttribute('aria-pressed', 'true')
+        activeThemeIcon.setAttribute('href', svgOfActiveBtn)
+        const themeSwitcherLabel = `${themeSwitcherText.textContent} (${btnToActive.dataset.bsThemeValue})`
+        themeSwitcher.setAttribute('aria-label', themeSwitcherLabel)
+
+        if (focus) {
+          themeSwitcher.focus()
+        }
+      }
+
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+        const storedTheme = getStoredTheme()
+        if (storedTheme !== 'light' && storedTheme !== 'dark') {
+          setTheme(getPreferredTheme())
+        }
       })
-  })
-})()
-    </script>
-  </body>
+
+      window.addEventListener('DOMContentLoaded', () => {
+        showActiveTheme(getPreferredTheme())
+
+        document.querySelectorAll('[data-bs-theme-value]')
+          .forEach(toggle => {
+            toggle.addEventListener('click', () => {
+              const theme = toggle.getAttribute('data-bs-theme-value')
+              setStoredTheme(theme)
+              setTheme(theme)
+              showActiveTheme(theme, true)
+            })
+          })
+      })
+    })()
+  </script>
+</body>
+
 </html>
