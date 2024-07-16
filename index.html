@@ -15,7 +15,10 @@
 <body id="body" style="height: 100vh;">
   <div class="layout " id="layout">
     <div class="layout-content bg-body-tertiary ">
-      <div class="table-responsive">
+      <div class="table-responsive" style="height: 500px; overflow-y: auto;">
+        <div class="py-4 px-2 mb-2 position-relative">
+          <i class="bi bi-x-lg fs-2" style="position: absolute; top:5px;"></i>
+        </div>
         <table class="table text-center table-bordered align-middle">
           <thead>
             <tr>
@@ -26,42 +29,12 @@
               <th scope="col">Сумма</th>
               <th scope="col">Действия</th>
             </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td class="title"></td>
-              <td class="quantity"></td>
-              <td class="price"></td>
-              <td class="sum"></td>
-              <td class="d-flex">
-                <i class="bi bi-plus-square-dotted fs-2" onclick="increment(this)"></i>
-                <i class="bi bi-dash-square-dotted fs-2 ms-3 me-3" onclick="decrement(this)"></i>
-                <i class="bi bi-trash3 fs-2" onclick="delete(this)"></i>
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-              <td>@fat</td>
-              <td>@fat</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>Larry the Bird</td>
-              <td>Larry the Bird</td>
-              <td>@twitter</td>
-              <td>@twitter</td>
-              <td>@twitter</td>
-            </tr>
-          </tbody>
-          <tfoot>
-            <th scope="row" colspan="4">Итого</th>
-            <th colspan="2">1000</th>
-
-          </tfoot>
+          </thead>          
+        </table>
+          <div class="d-flex justify-content-end w-100">
+            <button class="btn btn-secondary btn-sm">Заказать</button>
+            <button class="btn btn-danger btn-sm">Очистить</button>
+          </div>
         </table>
       </div>
     </div>

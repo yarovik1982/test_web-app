@@ -3,6 +3,7 @@
    
    let cartStorage = JSON.parse(localStorage.getItem('cart')) || [];
  
+   updateCartCount()
 
    export function addToCart(el, products){
       const index = el.closest('.card').id

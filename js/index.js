@@ -1,11 +1,13 @@
 import { toggleActive } from "./navbar.js";
 import { products, renderProducts } from "./products.js";
 import { addToCart } from "./cart.js";
+import { openModal } from "./modalCart.js";
 
 
 const init = () => {
    const productsNode = document.querySelector('#products')
-   
+   const $cart = document.querySelector('#cart')
+   const cartStorage = JSON.parse(localStorage.getItem('cart'))
    
    
 
@@ -15,6 +17,11 @@ const init = () => {
          addToCart(curr, products)
       }
    })
+
+   $cart.addEventListener('click',() => {
+      openModal(cartStorage)
+   })
+
    toggleActive()
    renderProducts(products)
 }

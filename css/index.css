@@ -35,18 +35,18 @@ body.unscroll{
    background: #000;
    position: absolute;
    left: 50%;
-   top: -10%;
+   top: -35%;
    transform: translateX(-50%);
    -webkit-transform: translateX(-50%);
    -moz-transform: translateX(-50%);
    -ms-transform: translateX(-50%);
    -o-transform: translateX(-50%);
-   transition: top 3s linear;
-   -webkit-transition: top 3s linear;
-   -moz-transition: top 3s linear;
-   -ms-transition: top 3s linear;
-   -o-transition: top 3s linear;
-   transition-delay: .2s;
+   transition: top 3s linear .2s;
+   -webkit-transition: top 3s linear .2s;
+   -moz-transition: top 3s linear .2s;
+   -ms-transition: top 3s linear .2s;
+   -o-transition: top 3s linear .2s;
+   padding-top: 0;
 }
 .layout-content.active{
    top: 50px;
