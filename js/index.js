@@ -19,7 +19,7 @@ const init = () => {
    })
 
    $cart.addEventListener('click',() => {
-      openModal(cartStorage)
+      openModal()
    })
 
    toggleActive()

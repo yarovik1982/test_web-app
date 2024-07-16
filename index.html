@@ -17,7 +17,7 @@
     <div class="layout-content bg-body-tertiary ">
       <div class="table-responsive" style="height: 500px; overflow-y: auto;">
         <div class="py-4 px-2 mb-2 position-relative">
-          <i class="bi bi-x-lg fs-2" style="position: absolute; top:5px;"></i>
+          <i class="bi bi-x-lg fs-2" style="position: absolute; top:5px;" id="close"></i>
         </div>
         <table class="table text-center table-bordered align-middle">
           <thead>
@@ -31,9 +31,9 @@
             </tr>
           </thead>          
         </table>
-          <div class="d-flex justify-content-end w-100">
-            <button class="btn btn-secondary btn-sm">Заказать</button>
-            <button class="btn btn-danger btn-sm">Очистить</button>
+          <div class="d-flex justify-content-end w-100" style="padding-bottom: 30px;">
+            <button class="btn btn-secondary btn-sm me-2" id="send">Заказать</button>
+            <button class="btn btn-danger btn-sm" id="clear">Очистить</button>
           </div>
         </table>
       </div>

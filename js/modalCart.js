@@ -1,19 +1,28 @@
-export function openModal(arr) {
+export function openModal() {
    const body = document.body
    const layout = document.querySelector('#layout')
    const layoutContent = document.querySelector('.layout-content')
    const btnClose = layoutContent.querySelector('.bi-x-lg')
    const table = document.querySelector('table')
+   const cartStorage = JSON.parse(localStorage.getItem('cart')) || []
 
    body.classList.add('unscroll')
    layout.classList.add('open')
    layoutContent.classList.add('active')
 
    setPosition(layout)
-   renderCart( table, arr)
+   renderCart( table, cartStorage)
 
-   btnClose.addEventListener('click', () => {
-      closeModal(body, layout, layoutContent)
+   layout.addEventListener('click', (e) => {
+      const curr = e.target
+      console.log(curr);
+      if(curr === btnClose || !curr.closest('.layout-content')){
+         closeModal(body, layout, layoutContent)
+      }
+      if(curr.id == 'clear'){
+         clearStorage()
+         renderCart(table, cartStorage)
+      }
    })
 }
 
@@ -69,5 +78,10 @@ function renderCart(table, arr) {
      tfoot.innerHTML = `<th scope="row" colspan="4">Итого</th>
        <th colspan="2" id="total">${total}</th>`;
    }
+ }
+
+ function clearStorage(){
+   localStorage.clear()
+   
  }
  
