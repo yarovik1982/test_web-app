@@ -35,7 +35,7 @@ body.unscroll{
    background: #000;
    position: absolute;
    left: 50%;
-   top: -35%;
+   top: -100%;
    transform: translateX(-50%);
    -webkit-transform: translateX(-50%);
    -moz-transform: translateX(-50%);
@@ -49,5 +49,8 @@ body.unscroll{
    padding-top: 0;
 }
 .layout-content.active{
+   top: 50px;
+}
+.layout-content.layout-content-form.layout-content.active{
    top: 50px;
 }

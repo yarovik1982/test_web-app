@@ -1,13 +1,9 @@
-export const toggleActive = () => {
-   const links = document.querySelectorAll('.nav-link')
-
-   links.forEach(link => {
-      link.addEventListener('click', (e)=> {
-         links.forEach(link => {
-            link.classList.remove('active')
-         })
-         e.target.classList.add('active')
+export const toggleActive = (elTarget, links) => {
+   if(elTarget.matches('nav-link')){
+      links.forEach(link => {
+         link.classList.remove('active')
       })
-   })
-   
-}
+      elTarget.classList.add('active')
+   }
+ }
+ 

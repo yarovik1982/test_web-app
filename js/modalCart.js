@@ -1,3 +1,5 @@
+import { storage } from "./storage.js"
+import { sendData } from "./fetchData.js"
 export function openModal() {
    const body = document.body
    const layout = document.querySelector('#layout')
@@ -5,6 +7,8 @@ export function openModal() {
    const btnClose = layoutContent.querySelector('.bi-x-lg')
    const table = document.querySelector('table')
    const cartStorage = JSON.parse(localStorage.getItem('cart')) || []
+   const contentForm = layout.querySelector('.layout-content-form')
+  //  const form = layoutContent.querySelector('form')
 
    body.classList.add('unscroll')
    layout.classList.add('open')
@@ -15,15 +19,19 @@ export function openModal() {
 
    layout.addEventListener('click', (e) => {
       const curr = e.target
-      console.log(curr);
       if(curr === btnClose || !curr.closest('.layout-content')){
          closeModal(body, layout, layoutContent)
       }
       if(curr.id == 'clear'){
-         clearStorage()
+         storage.clear()
          renderCart(table, cartStorage)
       }
+      if(curr.id == "send"){
+         openForm(contentForm, layoutContent)
+      }
+      
    })
+
 }
 
 function setPosition (el){
@@ -80,8 +88,84 @@ function renderCart(table, arr) {
    }
  }
 
- function clearStorage(){
-   localStorage.clear()
-   
+ function transformForOut(){
+  let total = 0
+  const sourse = storage.get('cart')
+  const raw = sourse.map(item => ({
+    "productTitle": item.productTitle,
+    "productPrice": item.productPrice,
+    "quantity": item.quantity,
+    "sum": item.sum
+  }))
+
+  for(let i = 0; i < raw.length; i++){
+    total += raw[i].sum
+  }
+  const str = sourse.map(item => `${item.productTitle}\t${item.quantity}\t${item.sum}\n`).join('') + 'Всего на сумму: ' + total
+  return [raw, total, str]
  }
+
+ function openForm(contentForm, layoutContent) {
+
+  layoutContent.classList.remove('active');
+  contentForm.classList.add('active');
+
+  const orderText = contentForm.querySelector('.order');
+
+  const [ cartItems, totalAmount, str ] = transformForOut();
+  const tableBody = orderText.querySelector('tbody');
+
+  if (tableBody) {
+    tableBody.innerHTML = cartItems.map(item => `
+      <tr>
+        <td>${item.productTitle}</td>
+        <td>${item.quantity}</td>
+        <td>${item.sum}&nbsp;₽</td>
+      </tr>
+    `).join('');
+  } else {
+    const table = document.createElement('table');
+    table.classList.add('table');
+
+    const tableBody = document.createElement('tbody');
+    tableBody.innerHTML = cartItems.map(item => `
+      <tr>
+        <td>${item.productTitle}</td>
+        <td>${item.quantity}</td>
+        <td>${item.sum}&nbsp;₽</td>
+      </tr>
+    `).join('');
+
+    const tfoot = document.createElement('tfoot');
+    tfoot.innerHTML = `
+      <tr>
+        <td >Всего на сумму</td>
+        <td colspan="2">${totalAmount}&nbsp;₽</td>
+      </tr>
+    `;
+
+    table.appendChild(tableBody);
+    table.appendChild(tfoot);
+    orderText.innerHTML = '';
+    orderText.appendChild(table);
+  }
+
+  const closeForm = contentForm.querySelector('#closeForm');
+  closeForm.addEventListener('click', handleCloseForm);
+  console.log(str);
+
+  
+}
+
+function handleCloseForm() {
+  const contentForm = document.querySelector('.content-form.active');
+  const layout = document.querySelector('#layout');
+
+  contentForm.classList.remove('active');
+  layout.classList.remove('open');
+}
+
+
+
+ 
  
